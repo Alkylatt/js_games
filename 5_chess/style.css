@@ -1,0 +1,29 @@
+div.chess_board {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    box-shadow: black 0 0 1em;
+
+    user-select: none;
+}
+div.chess_board > span {
+    display: flex;
+    flex-direction: row;
+}
+div.chess_board > span > div {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 90px;
+}
+div.chess_board > span:nth-child(2n-1) > div:nth-child(2n),
+div.chess_board > span:nth-child(2n) > div:nth-child(2n-1) {
+    background-color: rgb(117, 117, 117);
+}
+div.chess_board > span > div:hover {
+    background-color: rgb(255, 183, 0) !important;
+}

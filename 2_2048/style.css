@@ -1,0 +1,44 @@
+body {
+    background-color: #333;
+    font-family: "Source Code Pro", sans-serif;
+}
+
+#game_space {
+    margin: 5% auto;
+    border: 1px solid white;
+    width: 624px;
+    height: 624px;
+}
+#game_space div {
+    display: flex;
+    flex-direction: row;
+}
+#game_space div > div {
+    width: 150px;
+    height: 150px;
+
+    border: 1px solid white;
+    border-radius: 10px;
+
+    margin: 2px;
+
+    font-size: 50px;
+    justify-content: center;
+    line-height: 150px;
+
+    color: white;
+}
+
+div.block_2 { background-color: #458600; }
+div.block_4 { background-color: #677900; }
+div.block_8 { background-color: #726d00; }
+div.block_16 { background-color: #765900; }
+div.block_32 { background-color: #764100; }
+div.block_64 { background-color: #762f00; }
+div.block_128 { background-color: #762500; }
+div.block_256 { background-color: #762100; }
+div.block_512 { background-color: #760e00; }
+div.block_1024 { background-color: #760000; }
+div.block_2048 { background-color: #760025; }
+div.block_4096 { background-color: #760062; }
+div.block_undefined { background-color: #760062; }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>0A0B</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Display -->
+<div id="display">
+</div>
+
+<!-- This is where the records are shown -->
+<div id="guessed_record">
+</div>
+
+<!-- Number buttons -->
+<div id="numpad_container">
+    <div id="btn_0">0</div>
+    <div id="btn_1">1</div>
+    <div id="btn_2">2</div>
+    <div id="btn_3">3</div>
+    <div id="btn_4">4</div>
+    <div id="btn_5">5</div>
+    <div id="btn_6">6</div>
+    <div id="btn_7">7</div>
+    <div id="btn_8">8</div>
+    <div id="btn_9">9</div>
+    <div id="btn_del">del</div>
+    <div id="btn_enter" style="width: 100px;">Enter</div>
+</div>
+
+
+
+<div id="settings">
+    <h1>Settings</h1>
+
+    <div id="settings_dupe">
+        <span onclick="settings_dupe(true)">Allow Duplicate Digits</span>
+        <span onclick="settings_dupe(false)" class="selected">No</span>
+    </div>
+    <br>
+    <div id="settings_digits">
+        <span onclick="settings_digits(3)">3</span>
+        <span onclick="settings_digits(4)" class="selected">4</span>
+        <span onclick="settings_digits(5)">5</span>
+        <span onclick="settings_digits(6)">6</span>
+        <span onclick="settings_digits(7)">7</span>
+        <span onclick="settings_digits(8)">8</span>
+    </div>
+    <br><br>
+    <span onclick="settings_start()">Start</span>
+</div>
+<div id="gg"></div>
+</body>
+<script src="script.js"></script>
+</html>

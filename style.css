@@ -1,0 +1,44 @@
+body {
+    background-color: #333;
+    font-family: 'Share Tech', sans-serif;
+    user-select: none;
+}
+
+a {
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+    padding: 1em 2em;
+    width: 200px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    margin: auto 16px;
+    border: rgba(0,0,0,0) solid 2px;
+}
+a:hover {
+    border: white solid 2px;
+}
+
+div#menu {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+div#menu > div {
+    display: flex;
+    flex-direction: row;
+    font-size: 28px;
+}
+
+div#menu > div > p {
+    right: 0;
+}
+p.prototype {
+    color: rgb(226, 53, 0);
+}
+p.alpha {
+    color: rgb(56, 125, 255);
+}
+p.beta {
+    color: rgb(52, 238, 52);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body style="background-color: #333333;">
+<!-- centering the game space -->
+<div style="width: 100%; height: 100%; display: flex;">
+    <!-- Player -->
+    <div>
+        <!-- tetris space -->
+        <div style="display: flex; flex-wrap: nowrap; width: 800px; margin: 0 auto;">
+            <div id="holdPiece">
+                <div><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div id="garbageGauge"><div></div></div>
+            <div id="gridsContainer"></div>
+            <div id="nextPieces">
+                <div><div> </div><div> </div><div> </div><div> </div></div>
+                <div><div> </div><div> </div><div> </div><div> </div></div>
+                <div><div> </div><div> </div><div> </div><div> </div></div>
+                <div><div> </div><div> </div><div> </div><div> </div></div>
+                <div><div> </div><div> </div><div> </div><div> </div></div>
+            </div>
+        </div>
+
+        <div class="ui_left">
+            <div>Line Cleared: <span id="ui_lineCleared"></span></div>
+            <div>T-spins: <span id="ui_tSpin"></span></div>
+            <div>Quads: <span id="ui_quad"></span></div>
+        </div>
+
+        <div class="ui_right">
+        </div>
+    </div>
+
+
+
+    <!-- Opponent -->
+    <div id="secondBoard" style="display: none;">
+        <!-- tetris space -->
+        <div style="display: flex; flex-wrap: nowrap; width: 800px; margin: 0 auto;">
+            </div>
+            <div id="gridsContainer2"></div>
+        </div>
+
+        <div class="ui_left">
+            <div>Line Cleared: <span class="ui_lineCleared"></span></div>
+            <div>T-spins: <span class="ui_tSpin"></span></div>
+            <div>Quads: <span class="ui_quad"></span></div>
+        </div>
+
+        <div class="ui_right">
+        </div>
+    </div>
+</div>
+
+
+
+<!-- game over popup -->
+<div id="gameOverPopup" style="display: none; vertical-align: middle;">
+    <p style="color: white; text-align: center; font-size: 80px;">
+        Game Over :(
+    </p>
+</div>
+
+
+<!-- message box -->
+<div id="messageBox" style="display: none; vertical-align: middle;">
+</div>
+
+
+<!-- overlay menu -->
+<div id="overlay_menu" class="overlay">
+    <p>等待伺服器連線</p>
+    <div class="overlay_content">
+
+    </div>
+</div>
+
+
+
+</body>
+</html>
