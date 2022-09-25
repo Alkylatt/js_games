@@ -1,0 +1,59 @@
+body {
+    background-color: #333;
+    user-select: none;
+}
+
+#game_container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#game_container span {
+    display: flex;
+    flex-direction: row;
+}
+#game_container div {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px black solid;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.tile {
+    background-color: lightgray;
+}
+
+.tile-revealed {
+    background-color: darkgray;
+}
+.tile-1 {
+    color: yellowgreen;
+}
+.tile-2 {
+    color: yellow;
+}
+.tile-3 {
+    color: orange;
+}
+.tile-4 {
+    color: orangered;
+}
+.tile-5 {
+    color: red;
+}
+.tile-6 {
+    color: darkred;
+}
+.tile-7 {
+    color: purple;
+}
+.tile-8 {
+    color: black;
+}
+
+.tile-mine {
+    background-color: red;
+}

@@ -5,7 +5,10 @@ const GAMES = [
     ["2048", "2_2048", 0],
     ["Tic Tac Toe", "3_tictactoe", 0],
     ["Tetris", "4_tetris", 1],
-    ["Chess", "5_chess", 0]
+    ["Chess", "5_chess", 0],
+	["Snake", "6_snake", 0],
+	["Air Hockey", "7_airHockey", 0],
+	["Mine Sweeper", "8_minesweeper", 0]
 ];
 
 const MENU = document.getElementById("menu");

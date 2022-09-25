@@ -1,0 +1,28 @@
+body {
+    background-color: #333;
+}
+
+#game_canvas {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#game_canvas span {
+    display: flex;
+    flex-direction: row;
+}
+#game_canvas div {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+.snake {
+    background-color: #0A0 !important;
+}
+.hit {
+    background-color: #006725 !important;
+}
+.food {
+    background-color: #ffa600 !important;
+}
