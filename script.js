@@ -3,7 +3,7 @@ const GAMES = [
     // Status: 0 Prototype, 1 Alpha, 2 Beta
     ["0a0b", "1_0a0b", 2],
     ["2048", "2_2048", 0],
-    ["Tic Tac Toe", "3_tictactoe", 0],
+    ["Tic Tac Toe", "3_tictactoe", 2],
     ["Tetris", "4_tetris", 1],
     ["Chess", "5_chess", 0],
 	["Snake", "6_snake", 0],
