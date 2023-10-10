@@ -1,44 +1,29 @@
-body {
-    background-color: #333;
-    font-family: 'Share Tech', sans-serif;
+div.chess_board {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    box-shadow: black 0 0 1em;
+
     user-select: none;
 }
-
-a {
-    color: white;
-    font-size: 26px;
-    text-decoration: none;
-    padding: 1em 2em;
-    width: 200px;
-    text-align: center;
-    height: 28px;
-    line-height: 28px;
-    margin: auto 16px;
-    border: rgba(0,0,0,0) solid 2px;
-}
-a:hover {
-    border: white solid 2px;
-}
-
-div#menu {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-div#menu > div {
+div.chess_board > span {
     display: flex;
     flex-direction: row;
-    font-size: 28px;
 }
-
-div#menu > div > p {
-    right: 0;
+div.chess_board > span > div {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 90px;
 }
-p.prototype {
-    color: rgb(226, 53, 0);
+div.chess_board > span:nth-child(2n-1) > div:nth-child(2n),
+div.chess_board > span:nth-child(2n) > div:nth-child(2n-1) {
+    background-color: rgb(117, 117, 117);
 }
-p.alpha {
-    color: rgb(56, 125, 255);
-}
-p.beta {
-    color: rgb(52, 238, 52);
+div.chess_board > span > div:hover {
+    box-shadow: inset 8px 8px 0 rgb(255, 183, 0), inset -8px -8px 0 rgb(255, 183, 0);
 }
