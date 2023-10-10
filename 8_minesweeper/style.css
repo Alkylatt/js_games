@@ -13,9 +13,9 @@ body {
     flex-direction: row;
 }
 #game_container div {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     border: 1px black solid;
     text-align: center;
     font-weight: bold;
@@ -27,7 +27,7 @@ body {
 }
 
 .tile-revealed {
-    background-color: darkgray;
+    background-color: rgb(95, 95, 95);
 }
 .tile-1 {
     color: yellowgreen;
