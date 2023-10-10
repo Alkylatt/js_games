@@ -14,6 +14,7 @@ const piece_p = '♙',
 
 class ChessBoard {
     state = []; // pieces placement (char)
+    state_prev = null; // previous pieces placement (char) for undo-ing
     state_render = []; // chess board divs (div)
     white_king_moved = false;
     white_left_rook_moved = false;
@@ -21,6 +22,8 @@ class ChessBoard {
     black_king_moved = false;
     black_left_rook_moved = false;
     black_right_rook_moved = false;
+
+    selected_coord = null; // coord for moving pieces 
 
 
     constructor() {
@@ -57,6 +60,11 @@ class ChessBoard {
                 this.state_render[i][j] = new_square;
             }
         }
+
+        // add onclick event for each squares
+        for(let row=0;row < this.state_render.length;row++)
+            for(let col=0;col < this.state_render[row].length;col++)
+                this.state_render[row][col].addEventListener("click", function() {click_square(8*row + col)});
     }
 
     render_board() { // read state and print them onto html divs
@@ -98,6 +106,9 @@ class ChessBoard {
                         break;
                     case 'p':
                         this.state_render[i][j].innerText = piece_p;
+                        break;
+                    default:
+                        this.state_render[i][j].innerText = '';
                 }
             }
         }
@@ -148,10 +159,69 @@ class ChessBoard {
             console.log("color_square: unable to read the coordinate from state: ", coord[0], coord[1]);
             return;
         }
-        square.style.backgroundColor = "rgb(255,103,103)";
+        square.style.boxShadow = "inset 4px 4px 0 rgb(255,103,103), inset -4px -4px 0 rgb(255,103,103)";
+    }
+    color_square_reset(coord) {
+        let square = this.get_square(coord);
+        if(square === undefined) {
+            console.log("color_square_reset: unable to read the coordinate from state: ", coord[0], coord[1]);
+            return;
+        }
+        square.style.boxShadow = "";
+    }
+    
+    move_piece(coord_src, coord_dest) {
+        // don't move if src == dest
+        if(coord_src == coord_dest)
+            return false;
+
+        // save current state to state_prev
+        this.state_prev = JSON.parse(JSON.stringify(this.state));
+
+        // move the piece
+        this.set_state(coord_dest, this.get_state(coord_src));
+        this.set_state(coord_src, '');
+        this.render_board();
+
+        return true; // move succeccful
+    }
+
+    click_square(coord) {
+        // if no coord is selected, save the coord to selected_piece
+        if(this.selected_coord==null) {
+            if(this.get_state(coord) == '')
+                return;
+
+            this.selected_coord = coord;
+            this.color_square(coord);
+            return;
+        }
+
+        this.move_piece(this.selected_coord, coord);
+
+        // reset selection visual
+        this.color_square_reset(this.selected_coord);
+        this.selected_coord = null;
+    }
+
+    revert_state() {
+        if(this.state_prev == null)
+            return;
+
+        this.state = this.state_prev.slice();
+        this.state_prev = null;
+        this.render_board();
     }
 }
 
 
-
 let BOARD = new ChessBoard();
+// So that we can call the BOARD's click_square() from outside
+function click_square(i) {
+    // convert i -> coord
+    let coord = String.fromCharCode('A'.charCodeAt(0) + i%8).concat(String.fromCharCode('0'.charCodeAt(0)+8-Math.floor(i/8)));
+    ChessBoard.prototype.click_square.call(BOARD, coord);
+}
+
+
+BOARD.render_board();

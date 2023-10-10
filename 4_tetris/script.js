@@ -924,7 +924,8 @@ function showSecondBoard() {
 
 
 // Socket script
-const socket = io('http://25.68.222.197:3000', { transports : ['websocket'] });
+//const socket = io('http://25.68.222.197:3000', { transports : ['websocket'] }); // for hamachi multiplayer
+const socket = io('http://localhost:3000', { transports : ['websocket'] });
 socket.on('connect', () => {
     showMessage("成功建立連線 (Client ID: " + socket.id + ")");
     showSecondBoard();
