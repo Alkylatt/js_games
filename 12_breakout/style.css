@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+#game_display {
+    border: white 1px solid;
+}

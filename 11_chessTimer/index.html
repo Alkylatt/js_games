@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="container_menu">
+        <div class="menu_button" onclick="menuButtonPushed('countup')">Count up</div>
+        <div class="menu_button" onclick="menuButtonPushed('1m')">1 min</div>
+        <div class="menu_button" onclick="menuButtonPushed('10s')">10 sec</div>
+    </section>
+    <section id="container_clock" style="display: none;">
+        <!-- block1 -->
+        <div class="block">
+            <div id="timer2" class="timer">
+                <div class="min">0</div>:
+                <div class="sec">00</div>
+                <div class="ms">000</div>
+            </div>
+            <div id="button1" class="clock_button" onclick="buttonPushed(1)"></div>
+        </div>
+        <!-- block2 -->
+        <div class="block">
+            <div id="timer1" class="timer">
+                <div class="min">0</div>:
+                <div class="sec">00</div>
+                <div class="ms">000</div>
+            </div>
+            <div id="button2" class="clock_button" onclick="buttonPushed(2)"></div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+<!-- Script -->
+<script src="script.js"></script>

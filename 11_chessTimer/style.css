@@ -1,0 +1,91 @@
+body {
+    background-color: #333;
+    user-select: none;
+}
+
+#container_menu, #container_clock {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    width: 90%;
+    display: flex;
+
+    text-align: center;
+    color: white;
+}
+#container_menu {
+    flex-wrap: wrap;
+}
+#container_clock {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.block {
+    display: flex;
+    flex-direction: row;
+
+    height: 100%;
+    margin: 8px;
+}
+
+
+.menu_button {
+    min-width: 200px;
+    min-height: 200px;
+
+    background-color: gray;
+    margin: 8px;
+
+    writing-mode: vertical-rl;
+    font-size: 40px;
+    line-height: 200px;;
+}
+.menu_button:hover {
+    background-color: lightgray;
+}
+
+.clock_button {
+    min-height: 40%;
+    aspect-ratio: 1;
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 1em;
+    background-color: lightcoral;
+}
+.clock_button:not(.button.disabled) {
+    box-shadow: 0 0 1em lightcoral;
+    cursor: pointer;
+}
+.clock_button:hover {
+    background-color: lightpink;
+}
+.clock_button.disabled {
+    background-color: slategray;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+
+    writing-mode: vertical-rl;
+    justify-content: center;
+
+    color: white;
+    font-size: 48px;
+
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.timer > .min {
+    font-weight: bolder;
+}
+.timer > .sec {
+    
+}
+.timer > .ms {
+    color: lightgray;
+    font-size: 28px;
+}
