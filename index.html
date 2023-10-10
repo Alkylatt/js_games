@@ -1,14 +1,15 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-    <title>Chess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+
+    <title>Air Hockey</title>
 </head>
 <body>
-
+    <!-- Game Display -->
+    <canvas id="game_display" width="500" height="800px" onmousemove="getMousePos(event)"></canvas>
 </body>
 </html>
+<script src="script.js" defer></script>
