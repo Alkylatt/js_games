@@ -7,12 +7,12 @@ const GAMES = [
     ["Tetris", "4_tetris", 1],
     ["Chess", "5_chess", 0],
 	["Snake", "6_snake", 0],
-	["Air Hockey", "7_airHockey", 0],
-	["Mine Sweeper", "8_minesweeper", 0],
-	["Mine Sweeper", "9_bpmTapper", 0],
-	["Mine Sweeper", "10_tarot", 0],
-	["Mine Sweeper", "11_chessTimer", 0],
-	["Mine Sweeper", "12_breakout", 0]
+	["Air Hockey", "7_airHockey", 1],
+	["Mine Sweeper", "8_minesweeper", 1],
+	["BPM Tapper", "9_bpmTapper", 2],
+	["Tarot", "10_tarot", 0],
+	["Chess Timer", "11_chessTimer", 2],
+	["Breakout", "12_breakout", 0]
 ];
 
 const MENU = document.getElementById("menu");
@@ -30,11 +30,11 @@ GAMES.forEach(game => {
 
     switch(game[2]) {
         case 0:
-            p.innerHTML = "WIP";
+            p.innerHTML = "TODO";
             p.classList.add("prototype");
             break;
         case 1:
-            p.innerHTML = "Buggy";
+            p.innerHTML = "WIP";
             p.classList.add("alpha");
             break;
         case 2:
