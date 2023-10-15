@@ -23,6 +23,10 @@ let tick_func = null; // function pointer
 let intervalTick = null;
 let lastUpdate = null;
 
+// onclick don't look good on mobile, use eventlistener instead
+BUTTON[0].addEventListener("click", function() {buttonPushed(1);} ); 
+BUTTON[1].addEventListener("click", function() {buttonPushed(2);} ); 
+
 
 function menuButtonPushed(msg) {
     switch(msg) {
