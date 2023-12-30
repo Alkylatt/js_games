@@ -1,44 +1,71 @@
 body {
-    background-color: #333;
+    background-color: black;
     font-family: 'Share Tech', sans-serif;
     user-select: none;
 }
 
-a {
+/* menu text style */
+a { /* game name */
     color: white;
-    font-size: 26px;
     text-decoration: none;
-    padding: 1em 2em;
-    width: 200px;
-    text-align: center;
-    height: 28px;
-    line-height: 28px;
-    margin: auto 16px;
-    border: rgba(0,0,0,0) solid 2px;
+    min-width: 200px;
+    line-height: 64px;
+    font-size: 26px;
 }
-a:hover {
-    border: white solid 2px;
+p { /* status tag */
+    font-size: 24px;
+    margin-top: 20px;
+    border-left: 2px solid #333;
+    padding-left: 1em;
 }
 
+
+/* menu container div */
 div#menu {
     margin-top: 8px;
     margin-bottom: 8px;
+    overflow-y: scroll;
 }
+/* row div */
 div#menu > div {
     display: flex;
     flex-direction: row;
-    font-size: 28px;
+    height: 64px;
+    text-align: center;
+    overflow-x: hidden;
+}
+div#menu > div:hover {
+    background-color: #333;
 }
 
-div#menu > div > p {
-    right: 0;
-}
+/* label style */
 p.prototype {
-    color: rgb(226, 53, 0);
+    color: rgb(190, 64, 26);
 }
 p.alpha {
-    color: rgb(56, 125, 255);
+    color: rgb(212, 184, 89);
 }
 p.beta {
-    color: rgb(52, 238, 52);
+    color: rgb(47, 253, 47);
+}
+
+div.hide {
+    display: none !important;
+}
+
+/* filter */
+#filter_list {
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+#filter_list > div {
+    border: 1px solid white;
+    font-size: 28px;
+    padding: 8px 16px;
+    margin: 0 8px;
+}
+#filter_list > div.active {
+    background-color: white;
+    color: black;
 }

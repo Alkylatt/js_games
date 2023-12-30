@@ -1,6 +1,12 @@
+// Status: 0 Prototype, 1 Alpha, 2 Beta
+const STATUS = [
+    "TODO",
+    "WIP",
+    "Functional"
+];
+
 const GAMES = [
     // Display name, Folder name, Status
-    // Status: 0 Prototype, 1 Alpha, 2 Beta
     ["0a0b", "1_0a0b", 2],
     ["2048", "2_2048", 0],
     ["Tic Tac Toe", "3_tictactoe", 2],
@@ -16,6 +22,20 @@ const GAMES = [
 ];
 
 const MENU = document.getElementById("menu");
+
+let current_filter = null; // current filtering tag
+
+let FilterBtns = [];
+FilterBtns.push(document.getElementById("filter_todo"));
+FilterBtns.push(document.getElementById("filter_wip"));
+FilterBtns.push(document.getElementById("filter_functional"));
+// listeners
+for(let status=0;status < STATUS.length;status++) {
+    FilterBtns[status].addEventListener('click', function() {
+        filter(STATUS[status]);
+    });
+}
+
 
 GAMES.forEach(game => {
     let div = document.createElement("div");
@@ -43,3 +63,43 @@ GAMES.forEach(game => {
             break;
     }
 });
+
+
+function filter(allow_status) {
+    updateFilter(allow_status);
+    let childDivs = MENU.getElementsByTagName("div");
+
+    // no filter, show all
+    if(current_filter == null) {
+        for (let i = 0; i < childDivs.length; i++) {
+            childDivs[i].classList = "";
+        }
+        return;
+    }
+
+    // show only if tag == allow_status
+    for (let i = 0; i < childDivs.length; i++) {
+        let tag = childDivs[i].getElementsByTagName("p")[0].innerHTML;
+
+        if(tag == current_filter)
+            childDivs[i].classList = "";
+        else
+            childDivs[i].classList = "hide";
+    }
+}
+
+
+function updateFilter(tag) {
+    for(let i=0;i < FilterBtns.length;i++)
+        FilterBtns[i].classList = "";
+
+    if(tag != current_filter) // if current_filter already == tag, then reset current_filter
+        for(let i=0;i < STATUS.length;i++) {
+            if(tag == STATUS[i]) {
+                current_filter = tag;
+                FilterBtns[i].classList = "active";
+                return;
+            }
+        }
+    current_filter = null;
+}
