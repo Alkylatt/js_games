@@ -1,40 +1,53 @@
-// Status: 0 Prototype, 1 Alpha, 2 Beta
+// Status: 0-3
 const STATUS = [
-    "TODO",
-    "WIP",
-    "Functional"
+    "I'll do this later",
+    "Somewhat works",
+    "Works",
+    "Good enough"
 ];
 
 const GAMES = [
     // Display name, Folder name, Status
-    ["0a0b", "1_0a0b", 2],
-    ["2048", "2_2048", 0],
-    ["Tic Tac Toe", "3_tictactoe", 2],
-    ["Tetris", "4_tetris", 1],
-    ["Chess", "5_chess", 0],
+    ["0a0b", "1_0a0b", 3],
+    ["2048", "2_2048", 1],
+    ["Tic Tac Toe", "3_tictactoe", 3],
+    ["Tetris", "4_tetris", 2],
+    ["Chess", "5_chess", 1],
 	["Snake", "6_snake", 0],
 	["Air Hockey", "7_airHockey", 1],
 	["Mine Sweeper", "8_minesweeper", 1],
-	["BPM Tapper", "9_bpmTapper", 2],
-	["Tarot", "10_tarot", 0],
-	["Chess Timer", "11_chessTimer", 2],
-	["Breakout", "12_breakout", 0]
+	["BPM Tapper", "9_bpmTapper", 3],
+	["Tarot", "10_tarot", 1],
+	["Chess Timer", "11_chessTimer", 3],
+	["Breakout", "12_breakout", 0],
+    ["Roulette", "13_roulette", 1],
+    ["Sliding Puzzle", "14_slidingPuzzle", 0],
+    ["Lockpicking", "15_lockpicking", 2]
 ];
 
 const MENU = document.getElementById("menu");
+const FILTER_LIST = document.getElementById("filter_list");
 
-let current_filter = null; // current filtering tag
+for(let i=0;i < STATUS.length;i++) {
+    let newButton = document.createElement("div");
+    FILTER_LIST.appendChild(newButton);
+    newButton.id = "filter_"+i;
+    newButton.innerText = STATUS[i];
+}
 
 let FilterBtns = [];
-FilterBtns.push(document.getElementById("filter_todo"));
-FilterBtns.push(document.getElementById("filter_wip"));
-FilterBtns.push(document.getElementById("filter_functional"));
+FilterBtns.push(document.getElementById("filter_0"));
+FilterBtns.push(document.getElementById("filter_1"));
+FilterBtns.push(document.getElementById("filter_2"));
+FilterBtns.push(document.getElementById("filter_3"));
 // listeners
 for(let status=0;status < STATUS.length;status++) {
     FilterBtns[status].addEventListener('click', function() {
         filter(STATUS[status]);
     });
 }
+
+let current_filter = null; // current filtering tag
 
 
 GAMES.forEach(game => {
@@ -50,16 +63,20 @@ GAMES.forEach(game => {
 
     switch(game[2]) {
         case 0:
-            p.innerHTML = "TODO";
-            p.classList.add("prototype");
+            p.innerHTML = STATUS[0];
+            p.classList.add("status0");
             break;
         case 1:
-            p.innerHTML = "WIP";
-            p.classList.add("alpha");
+            p.innerHTML = STATUS[1];
+            p.classList.add("status1");
             break;
         case 2:
-            p.innerHTML = "Functional";
-            p.classList.add("beta");
+            p.innerHTML = STATUS[2];
+            p.classList.add("status2");
+            break;
+        case 3:
+            p.innerHTML = STATUS[3];
+            p.classList.add("status3");
             break;
     }
 });
@@ -103,3 +120,10 @@ function updateFilter(tag) {
         }
     current_filter = null;
 }
+
+
+// link to 0_terminal/index.html
+let terminal_button = document.getElementById("button_terminal");
+terminal_button.onclick = function() {
+    window.location.href = "0_terminal/index.html";
+};
