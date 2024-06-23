@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Buckshot Roulette Clone</title>
+</head>
+<body>
+    <!-- Game Display -->
+    <div id="game_space">
+        <!-- table -->
+        <div>
+            <div id="inventory_opponent" class="inventory"></div>
+            <div id="shotgun" onclick="shotgunAim(event)"></div>
+            <div id="shell_display"></div>
+            <div id="inventory_player" class="inventory">
+                <div>
+                    Hover over me
+                    <span class="tooltip">Tooltip text</span>
+                </div>
+            </div>
+        </div>
+        <!-- health display -->
+        <div id="health_display"></div>
+    </div>
+
+
+</body>
+</html>
+<script src="script.js" defer></script>

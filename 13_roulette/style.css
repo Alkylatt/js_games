@@ -1,0 +1,108 @@
+body {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    display: grid;
+    place-items: center;
+    min-height: 500px;
+
+    user-select: none;
+    cursor: default;
+}
+
+#game_space {
+    border: red 1px solid;
+    display: flex;
+}
+#game_space > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#health_display {
+    border: white solid 1px;
+    width: 200px;
+    height: 500px;
+    color: white;
+    font-size: 24px;
+}
+
+
+#shotgun {
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    width: 700px;
+    transition: .2s;
+}
+#shotgun:hover {
+    text-shadow: white 0 0 1em;
+}
+#shotgun.aimForward {
+    transform: rotate(90deg);
+}
+#shotgun.aimBackward {
+    transform: rotate(-90deg);
+}
+
+.inventory {
+    border: white solid 1px;
+    height: 100px;
+    width: 500px;
+    margin: 16px;
+    display: flex;
+}
+.inventory > div {
+    border: white solid 1px;
+    margin: 2px;
+    flex: 1;
+}
+.inventory > div:hover {
+    border-bottom: white solid 8px;
+}
+
+
+#shell_display {
+    border: white solid 1px;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#shell_display > div {
+    width: 10px;
+    height: 30px;
+    margin: 4px;
+}
+#shell_display > div.live {
+    background-color: rgb(180, 45, 45);
+}
+#shell_display > div.blank {
+    background-color: rgb(57, 106, 161);
+}
+
+
+
+/* Tooltip container */
+.inventory div {
+    position: relative;
+    display: inline-block;
+}
+/* Tooltip text */
+.inventory div .tooltip {
+    visibility: hidden;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    position: absolute;
+    z-index: 1;
+    bottom: 64px;   
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.inventory div:hover .tooltip {
+    visibility: visible;
+}

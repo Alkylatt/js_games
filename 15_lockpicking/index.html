@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Lockpicking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game_container">
+    <div id="game">
+        <div id="lockpick_container">
+            <div id="lockpick"></div>
+        </div>
+        <div id="keyway">
+            <div id="left_threshold"></div>
+            <div id="right_threshold"></div>
+        </div>
+    </div>
+
+    <div id="popup"></div>
+    <div id="reset_button" class="button hidden" onclick="init_game()">New Lock</div>
+</div>
+
+<div id="settings_container">
+    <form>
+        <label>Show target <input type="checkbox" onchange="set_target(this)"></label>
+        
+    </form>
+</div>
+
+<div id="display_container">
+    <div>
+        <span>Stuck Timer</span><span style="width: 250px; display: flex;"><span id="stuck_timer_s"></span><span id="stuck_timer_ms"></span></span>
+    </div>
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>
