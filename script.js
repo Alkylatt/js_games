@@ -22,7 +22,8 @@ const GAMES = [
 	["Breakout", "12_breakout", 0],
     ["Roulette", "13_roulette", 1],
     ["Sliding Puzzle", "14_slidingPuzzle", 0],
-    ["Lockpicking", "15_lockpicking", 2]
+    ["Lockpicking", "15_lockpicking", 2],
+    ["Game of Life", "16_gameOfLife", 3]
 ];
 
 const MENU = document.getElementById("menu");

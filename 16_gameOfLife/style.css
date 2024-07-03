@@ -1,0 +1,43 @@
+body {
+    background-color: #333;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#game_canvas {
+    border: white solid 1px;
+}
+canvas {
+    width: 500px;
+    height: 500px;
+}
+
+#play_button {
+    width: 200px;
+    height: 80px;
+
+    margin: 64px;
+
+    border: white solid 1px;
+    color: white;
+
+    text-align: center;
+    line-height: 80px;
+    font-size: 32px;
+
+    user-select: none;
+    cursor: pointer;
+}
+#play_button:hover {
+    background-color: white;
+    color: black;
+}
